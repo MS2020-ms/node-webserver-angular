@@ -10,7 +10,7 @@
 - ir public/index.html
 ## Servir un sitio web completo
 - crear public/roadtrip
-- localhost:8080/index
+- localhost:8081/index
 
 # Handlebars Xa -> sitios web semi-dinamicos 
 - xa contenidos sencillos
@@ -34,3 +34,21 @@
 - creo archivo .env -> defino puerto
 - en package.json definir script : "start": "node app.js"
   >npm start
+
+# Subir app a produccion - Heroku
+- >heroku --version
+- ir heroku login
+- new/create new app
+- Deploy -> seleccionar Git Heroku or GitHub 
+  si no lo tengo instalado -> Download and install the Heroku CLI.
+- >heroku login -i
+- >git init
+  >heroku git:remote -a node-webserver-udemy
+- >git commit -m "My commit"
+  >git push heroku master
+
+# Desplegando aplicaciones de Angular y React
+- Copiar toda la carpeta de Angular de 'produccion' y pegar en carpeta public
+- ir app.js
+- >npm start
+  ir localhost:8081

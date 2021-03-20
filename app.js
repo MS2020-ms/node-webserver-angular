@@ -6,16 +6,18 @@ const app = express()
 const port = process.env.PORT;
 
 
-//Handlebars Partials
+//Handlebars: Partials
 app.set('view engine', 'hbs');
 hbs.registerPartials(__dirname + '/views/partials');
 
-//Xa servir contenido estatico = path estatico (public/old)
+//Xa servir contenido estatico = path estatico (public)
+//Xa servir aplicacion Angular
 //app.use le va a caer siempre al index.html
 app.use(express.static('public'));
 
-//Handlebars (busca las vistas en views)
+//Handlebars: (busca las vistas en views)
 //CONTROLADOR
+/*
 app.get('/', (req, res) => {
     //le puedo mandar argumentos del Controlador a la Vista -> home.html
     res.render('home', {
@@ -35,6 +37,7 @@ app.get('/generic', (req, res) => {
         titulo: 'Curso de Node'
     });
 });
+*/
 
 // Xa servir sitio web completo:
 // app.get('/generic', (req, res) => {
@@ -51,7 +54,7 @@ app.get('/generic', (req, res) => {
 // });
 
 app.get('*', (req, res) => {
-    res.sendFile(__dirname + '/public/404.html');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 // app.listen(8080)
